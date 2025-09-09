@@ -51,11 +51,43 @@
                 </div>
             </div>
         </section>
-        <style>
+    <style>
+            /* Mantener el mismo tamaño de tarjetas e imágenes en Beyblades Destacados para <=1387px */
+            @media (max-width: 1387px) {
+                #beyblades .product-card {
+                    min-height: 430px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                }
+                #beyblades .card-img-top {
+                    height: 300px !important;
+                    object-fit: cover !important;
+                    width: 100%;
+                    max-width: 100%;
+                }
+                #beyblades .card-body {
+                    flex: 1 1 auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                }
+            }
             /* Más separación entre tarjetas de productos en pantallas pequeñas */
             @media (max-width: 767.98px) {
                 .product-card {
                     margin-bottom: 2rem !important;
+                }
+            }
+            /* Más separación aún a partir de 734px y menores */
+            @media (max-width: 734px) {
+                .product-card {
+                    margin-bottom: 2rem !important;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .product-card .card-body {
+                    flex: 0 0 auto;
                 }
             }
         </style>
@@ -71,7 +103,7 @@
             <h2 class="text-center mb-4 text-white">Beyblades Destacados</h2>
             <div class="row justify-content-center">
                 <div class="col-md-3">
-                    <div class="card product-card h-100">
+                    <div class="card product-card">
                         <img src="img/Productos/0019516626537.webp" class="card-img-top" alt="Valtryek V2">
                         <div class="card-body text-center">
                             <h5 class="card-title">Valtryek V2</h5>
@@ -81,7 +113,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card product-card h-100">
+                    <div class="card product-card">
                         <img src="img/Productos/10421001608_GRIS_5.jpg" class="card-img-top" alt="Spryzen S2">
                         <div class="card-body text-center">
                             <h5 class="card-title">Spryzen S2</h5>
@@ -91,7 +123,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card product-card h-100">
+                    <div class="card product-card">
                         <img src="img/Productos/3e58b5f1-fao_144631501_1.jpg" class="card-img-top" alt="Roktavor R2">
                         <div class="card-body text-center">
                             <h5 class="card-title">Roktavor R2</h5>
@@ -101,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card product-card h-100">
+                    <div class="card product-card">
                         <img src="img/Productos/81CFov0S0ZL._AC_UF894_1000_QL80_grande.webp" class="card-img-top" alt="Luinor L2">
                         <div class="card-body text-center">
                             <h5 class="card-title">Luinor L2</h5>

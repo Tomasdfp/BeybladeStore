@@ -9,6 +9,11 @@
     <link rel="icon" href="img/Logo.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
+        /* Forzar que las imágenes de productos tengan el mismo alto */
+        .card-img-top {
+            height: 300px;
+            object-fit: cover;
+        }
         body { background: linear-gradient(135deg, #181c24 0%, #c31432 100%); min-height: 100vh; }
         .tournament-banner { background: url('img/torneo_banner.jpg') center/cover no-repeat; min-height: 220px; border-radius: 1.5rem; position: relative; }
         .tournament-banner .overlay { background: rgba(0,0,0,0.5); border-radius: 1.5rem; position: absolute; top:0; left:0; right:0; bottom:0; }
@@ -107,6 +112,24 @@
             <section class="col-lg-8">
                 <div id="form-section">
                     <!-- Formulario de inscripción -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white franja-negra"><i class="bi bi-person-fill"></i> Datos personales</div>
+                        <div class="card-body">
+                            <!-- Campos de datos personales -->
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white franja-negra"><i class="bi bi-cpu"></i> Información de Beyblade</div>
+                        <div class="card-body">
+                            <!-- Campos de información de beyblade -->
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white franja-negra"><i class="bi bi-graph-up"></i> Experiencia previa</div>
+                        <div class="card-body">
+                            <!-- Campos de experiencia previa -->
+                        </div>
+                    </div>
                 </div>
                 <div id="confirmation-section" class="d-none">
                     <!-- Resumen de inscripción y QR -->
