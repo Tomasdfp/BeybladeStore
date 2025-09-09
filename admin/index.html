@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | BaybladeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../img/Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #f6f8fa;
+        }
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #2196f3 0%, #c31432 100%);
+            color: #fff;
+            padding-top: 2rem;
+        }
+        .sidebar .nav-link {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover {
+            background: rgba(255,255,255,0.12);
+            color: #ffb347;
+        }
+        .sidebar .logo {
+            width: 60px;
+            margin-bottom: 1.5rem;
+        }
+        .main-content {
+            padding: 2.5rem 2rem 2rem 2rem;
+        }
+        .card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px rgba(33,150,243,0.07);
+        }
+        .stat-icon {
+            font-size: 2.2rem;
+            opacity: 0.7;
+        }
+        .alert-stock {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+        .table thead {
+            background: #2196f3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <div class="text-center mb-4">
+                <img src="../img/logo.png" class="logo" alt="Logo">
+                <h5 class="fw-bold">Admin</h5>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html"><i class="bi bi-box-seam me-2"></i>Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a></li>
+                <li class="nav-item mt-4"><a class="nav-link text-warning fw-bold" href="../index.html"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a></li>
+            </ul>
+        </nav>
+        <!-- Main content -->
+        <main class="col-md-10 ms-sm-auto main-content">
+            <h2 class="mb-4 fw-bold"><i class="bi bi-speedometer2 me-2"></i>Panel de Control</h2>
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <div class="stat-icon text-primary"><i class="bi bi-currency-dollar"></i></div>
+                        <div class="ms-3">
+                            <h5 class="mb-0" id="ventas-hoy">$0</h5>
+                            <small>Ventas hoy</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <div class="stat-icon text-danger"><i class="bi bi-people"></i></div>
+                        <div class="ms-3">
+                            <h5 class="mb-0" id="usuarios-registrados">0</h5>
+                            <small>Usuarios registrados</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 d-flex flex-row align-items-center">
+                        <div class="stat-icon text-warning"><i class="bi bi-box-seam"></i></div>
+                        <div class="ms-3">
+                            <h5 class="mb-0" id="total-productos">0</h5>
+                            <small>Productos</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gráficos -->
+            <div class="row mb-4">
+                <div class="col-lg-8 mb-3 mb-lg-0">
+                    <div class="card p-3">
+                        <h6 class="fw-bold mb-3">Ventas de la semana</h6>
+                        <canvas id="ventasChart" height="120"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card p-3">
+                        <h6 class="fw-bold mb-3">Productos más vendidos</h6>
+                        <ul class="list-group" id="mas-vendidos">
+                            <!-- JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Últimos pedidos -->
+            <div class="row mb-4">
+                <div class="col-lg-8">
+                    <div class="card p-3">
+                        <h6 class="fw-bold mb-3">Últimos pedidos</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Cliente</th>
+                                        <th>Fecha</th>
+                                        <th>Total</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ultimos-pedidos">
+                                    <!-- JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Alertas -->
+                <div class="col-lg-4">
+                    <div class="card p-3">
+                        <h6 class="fw-bold mb-3">Alertas</h6>
+                        <div id="alertas">
+                            <!-- JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
