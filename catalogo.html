@@ -41,66 +41,78 @@
         </nav>
     </header>
     <main class="container-fluid py-4">
-
-
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent px-0 mb-4">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Beyblades</li>
+            </ol>
         </nav>
         <div class="row">
+            <!-- Botón para mostrar/ocultar filtros en pantallas pequeñas -->
+            <div class="d-lg-none mb-3">
+                <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#filtrosCollapse" aria-expanded="false" aria-controls="filtrosCollapse">
+                    <i class="bi bi-funnel"></i> Filtros y Ordenar
+                </button>
+            </div>
             <!-- Sidebar Filtros -->
             <aside class="col-lg-3 mb-4">
-                <div class="card bg-dark text-white mb-3">
-                    <div class="card-header border-danger border-2 border-bottom bg-dark">
-                        <h5 class="mb-0">Filtros</h5>
-                    </div>
-                    <div class="card-body">
-                        <form id="filter-form">
-                            <div class="mb-3">
-                                <label class="form-label">Tipo</label>
-                                <select class="form-select" id="filter-tipo" multiple>
-                                    <option value="Ataque">Ataque</option>
-                                    <option value="Defensa">Defensa</option>
-                                    <option value="Equilibrio">Equilibrio</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Elemento</label>
-                                <select class="form-select" id="filter-elemento" multiple>
-                                    <option value="Fuego">Fuego</option>
-                                    <option value="Agua">Agua</option>
-                                    <option value="Viento">Viento</option>
-                                    <option value="Tierra">Tierra</option>
-                                    <option value="Metal">Metal</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Marca</label>
-                                <select class="form-select" id="filter-marca" multiple>
-                                    <option value="Hasbro">Hasbro</option>
-                                    <option value="Takara Tomy">Takara Tomy</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Precio</label>
-                                <input type="range" class="form-range" min="8000" max="25000" step="1000" id="filter-precio">
-                                <div class="d-flex justify-content-between">
-                                    <span id="precio-min">$8.000</span>
-                                    <span id="precio-max">$25.000</span>
+                <div class="collapse d-lg-block" id="filtrosCollapse">
+                    <div class="card bg-dark text-white mb-3">
+                        <div class="card-header border-danger border-2 border-bottom bg-dark">
+                            <h5 class="mb-0">Filtros</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="filter-form">
+                                <div class="mb-3">
+                                    <label class="form-label">Tipo</label>
+                                    <select class="form-select" id="filter-tipo" multiple>
+                                        <option value="Ataque">Ataque</option>
+                                        <option value="Defensa">Defensa</option>
+                                        <option value="Equilibrio">Equilibrio</option>
+                                    </select>
                                 </div>
-                            </div>
-                            <button type="button" class="btn btn-warning w-100" id="clear-filters">Limpiar Filtros</button>
-                        </form>
+                                <div class="mb-3">
+                                    <label class="form-label">Elemento</label>
+                                    <select class="form-select" id="filter-elemento" multiple>
+                                        <option value="Fuego">Fuego</option>
+                                        <option value="Agua">Agua</option>
+                                        <option value="Viento">Viento</option>
+                                        <option value="Tierra">Tierra</option>
+                                        <option value="Metal">Metal</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Marca</label>
+                                    <select class="form-select" id="filter-marca" multiple>
+                                        <option value="Hasbro">Hasbro</option>
+                                        <option value="Takara Tomy">Takara Tomy</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Precio</label>
+                                    <input type="range" class="form-range" min="8000" max="25000" step="1000" id="filter-precio">
+                                    <div class="d-flex justify-content-between">
+                                        <span id="precio-min">$8.000</span>
+                                        <span id="precio-max">$25.000</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-warning w-100" id="clear-filters">Limpiar Filtros</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="card bg-dark text-white mb-3">
-                    <div class="card-header border-warning border-2 border-bottom bg-dark">
-                        <h6 class="mb-0">Ordenar por</h6>
-                    </div>
-                    <div class="card-body">
-                        <select class="form-select" id="sort-select">
-                            <option value="novedades">Novedades</option>
-                            <option value="precio-asc">Precio: Menor a mayor</option>
-                            <option value="precio-desc">Precio: Mayor a menor</option>
-                            <option value="popularidad">Popularidad</option>
-                        </select>
+                    <div class="card bg-dark text-white mb-3">
+                        <div class="card-header border-warning border-2 border-bottom bg-dark">
+                            <h6 class="mb-0">Ordenar por</h6>
+                        </div>
+                        <div class="card-body">
+                            <select class="form-select" id="sort-select">
+                                <option value="novedades">Novedades</option>
+                                <option value="precio-asc">Precio: Menor a mayor</option>
+                                <option value="precio-desc">Precio: Mayor a menor</option>
+                                <option value="popularidad">Popularidad</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </aside>
@@ -160,6 +172,16 @@
             </div>
         </div>
     </footer>
+    <style>
+        /* Mostrar el sidebar como menú desplegable en <=988px */
+        @media (max-width: 988px) {
+            aside.col-lg-3 {
+                position: static;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap Icons -->
@@ -167,4 +189,3 @@
     <script src="js/catalogo.js"></script>
 </body>
 </html>
-
