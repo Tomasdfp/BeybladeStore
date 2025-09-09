@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | BaybladeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%), url('img/fondo.jpg') center/cover no-repeat;
+            background-blend-mode: multiply;
+        }
+        .register-card {
+            max-width: 480px;
+            margin: auto;
+            margin-top: 6vh;
+            box-shadow: 0 8px 32px rgba(44,83,100,0.25);
+            border-radius: 1.2rem;
+            background: rgba(255,255,255,0.97);
+        }
+        .register-logo {
+            width: 70px;
+            margin-bottom: 1rem;
+        }
+        .form-control:focus {
+            border-color: #c31432;
+            box-shadow: 0 0 0 0.2rem rgba(195,20,50,0.15);
+        }
+        .btn-register {
+            background: linear-gradient(90deg, #c31432 0%, #ffb347 100%);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-register:hover {
+            background: linear-gradient(90deg, #ffb347 0%, #c31432 100%);
+            color: #fff;
+        }
+        .form-error { color: #c31432; font-size: 0.95em; }
+        .form-success { color: #28a745; font-size: 1.1em; font-weight: bold; }
+        .show-hide {
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #c31432;
+        }
+        .strength-bar {
+            height: 7px;
+            border-radius: 4px;
+            margin-top: 2px;
+        }
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .step-dot {
+            width: 18px; height: 18px; border-radius: 50%; background: #eee; border: 2px solid #c31432; display: inline-block;
+        }
+        .step-dot.active { background: #c31432; }
+    </style>
+</head>
+<body>
+    <main class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="register-card p-4 shadow">
+            <div class="text-center">
+                <img src="img/logo.png" alt="Logo" class="register-logo">
+                <h3 class="fw-bold mb-3" style="color:#c31432">BaybladeStore</h3>
+            </div>
+            <div class="step-indicator mb-3">
+                <span class="step-dot active" id="step-dot-1"></span>
+                <span class="step-dot" id="step-dot-2"></span>
+            </div>
+            <form id="register-form" autocomplete="on" novalidate>
+                <div id="step-1">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"><i class="bi bi-person-fill me-1"></i> Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                        <div class="form-error" id="error-nombre"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><i class="bi bi-envelope-fill me-1"></i> Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="form-error" id="error-email"></div>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="password" class="form-label"><i class="bi bi-lock-fill me-1"></i> Contraseña</label>
+                        <input type="password" class="form-control" id="password" required>
+                        <span class="show-hide" id="toggle-password"><i class="bi bi-eye"></i></span>
+                        <div class="strength-bar bg-secondary" id="strength-bar"></div>
+                        <div class="form-error" id="error-password"></div>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="password2" class="form-label"><i class="bi bi-lock-fill me-1"></i> Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="password2" required>
+                        <span class="show-hide" id="toggle-password2"><i class="bi bi-eye"></i></span>
+                        <div class="form-error" id="error-password2"></div>
+                    </div>
+                    <button type="button" class="btn btn-register w-100 mb-2" id="next-step">
+                        Siguiente <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                </div>
+                <div id="step-2" style="display:none;">
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label"><i class="bi bi-telephone-fill me-1"></i> Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" required maxlength="9" inputmode="numeric">
+                        <div class="form-error" id="error-telefono"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label"><i class="bi bi-calendar-date me-1"></i> Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="fecha" required>
+                        <div class="form-error" id="error-fecha"></div>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="terminos" required>
+                        <label class="form-check-label" for="terminos">Acepto términos y condiciones</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="newsletter">
+                        <label class="form-check-label" for="newsletter">Recibir newsletter</label>
+                    </div>
+                    <button type="submit" class="btn btn-register w-100 mb-2">
+                        <i class="bi bi-person-plus"></i> Registrarme
+                    </button>
+                </div>
+                <div class="form-success mt-3 d-none" id="register-success">¡Registro exitoso! Redirigiendo...</div>
+            </form>
+            <div class="text-center mt-3">
+                <span>¿Ya tienes cuenta?</span>
+                <a href="login.html" class="fw-bold text-decoration-none" style="color:#c31432">Inicia sesión aquí</a>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="js/registro.js"></script>
+</body>
+</html>

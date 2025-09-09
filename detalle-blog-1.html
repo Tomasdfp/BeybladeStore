@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategias Ganadoras: Cómo Dominar el BeyStadium | BaybladeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('img/principal 2.png') center/cover no-repeat !important;
+            color: #fff !important;
+        }
+        .main-img { width: 100%; max-width: 700px; border-radius: 1.2rem; box-shadow: 0 4px 24px rgba(44,83,100,0.18); margin-bottom: 2rem; }
+        .meta { color: #ffb347; font-size: 1rem; margin-bottom: 1rem; }
+        .toc-float { position: sticky; top: 110px; background: #181c24; border-radius: 1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 1.2rem; margin-bottom: 2rem; }
+        .toc-float ul { list-style: none; padding-left: 0; }
+        .toc-float li { margin-bottom: 0.5rem; }
+        .toc-float a { color: #ffb347; text-decoration: none; }
+        .toc-float a.active { font-weight: bold; color: #fff; }
+        .quote { background: #222; border-left: 4px solid #c31432; padding: 1rem 1.5rem; border-radius: 0.7rem; color: #ffb347; font-style: italic; margin: 2rem 0; }
+        .author-box { background: #181c24; border-radius: 1rem; padding: 1.2rem; display: flex; align-items: center; gap: 1.2rem; margin-top: 2.5rem; }
+        .author-img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid #ffb347; }
+        .like-btn { color: #ffb347; font-size: 1.5rem; cursor: pointer; transition: color 0.2s; }
+        .like-btn.liked { color: #c31432; }
+        .related-articles .card { background: #181c24; border: none; border-radius: 1rem; }
+        .related-articles .card-title { color: #ffb347; }
+        .comment-section { background: #181c24; border-radius: 1rem; padding: 1.5rem; margin-top: 2.5rem; }
+        .comment { border-bottom: 1px solid #333; padding: 1rem 0; }
+        .comment:last-child { border-bottom: none; }
+        .comment .author { font-weight: bold; color: #ffb347; }
+        .comment .date { color: #aaa; font-size: 0.95em; }
+        .comment .reply { color: #2196f3; cursor: pointer; font-size: 0.95em; }
+        .comment-form textarea { resize: vertical; }
+        .share-btns .btn { margin-right: 0.5rem; }
+        .reading-time { color: #ffb347; font-size: 0.95em; margin-left: 0.7em; }
+        @media (max-width: 991px) { .toc-float { position: static; margin-bottom: 2rem; } }
+        body, body * { color: #fff !important; }
+    </style>
+</head>
+<body>
+    <!-- Header igual que index -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="fw-bold">BaybladeStore</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="torneo-inscripcion.html">Combate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                    <a href="carrito.html" class="btn btn-danger ms-3 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary ms-2">
+                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <div class="row">
+            <aside class="col-lg-3 order-lg-2 mb-4">
+                <nav class="toc-float" id="toc">
+                    <h6 class="text-warning mb-3">Índice de Contenido</h6>
+                    <ul>
+                        <li><a href="#intro">Introducción</a></li>
+                        <li><a href="#tips">Tips Rápidos</a></li>
+                        <li><a href="#estrategias">Estrategias Avanzadas</a></li>
+                        <li><a href="#citas">Citas Destacadas</a></li>
+                        <li><a href="#conclusion">Conclusión</a></li>
+                    </ul>
+                </nav>
+                <div class="share-btns mb-4">
+                    <button class="btn btn-outline-primary" id="share-facebook"><i class="bi bi-facebook"></i></button>
+                    <button class="btn btn-outline-info" id="share-twitter"><i class="bi bi-twitter"></i></button>
+                    <button class="btn btn-outline-success" id="share-whatsapp"><i class="bi bi-whatsapp"></i></button>
+                </div>
+            </aside>
+            <section class="col-lg-9 order-lg-1">
+                <h1 class="fw-bold mb-2">Estrategias Ganadoras: Cómo Dominar el BeyStadium</h1>
+                <div class="meta mb-2">
+                    <span><i class="bi bi-calendar-event"></i> 2025-09-08</span> ·
+                    <span><i class="bi bi-person"></i> Admin</span> ·
+                    <span><i class="bi bi-tag"></i> Estrategias</span>
+                    <span class="reading-time" id="reading-time"></span>
+                </div>
+                <img src="img/Blog/12452.jpg" alt="Estrategias Beyblade" class="main-img mb-4">
+                <div id="intro">
+                    <h3 class="text-warning">Introducción</h3>
+                    <p>Dominar el BeyStadium requiere más que solo un buen lanzador. En este artículo descubrirás técnicas, mentalidad y secretos de los campeones para llevar tu juego al siguiente nivel.</p>
+                </div>
+                <div id="tips">
+                    <h3 class="text-warning mt-4">Tips Rápidos para Ganar</h3>
+                    <ul>
+                        <li>Elige el Beyblade adecuado según tu estilo de juego.</li>
+                        <li>Practica lanzamientos con diferentes ángulos y fuerzas.</li>
+                        <li>Observa a tus rivales y aprende de sus movimientos.</li>
+                        <li>Mantén tu equipo en óptimas condiciones.</li>
+                        <li>Adapta tu estrategia según el tipo de estadio.</li>
+                    </ul>
+                </div>
+                <div id="estrategias">
+                    <h3 class="text-warning mt-4">Estrategias Avanzadas</h3>
+                    <p>Los campeones no solo confían en la suerte. Aquí algunas estrategias avanzadas:</p>
+                    <ol>
+                        <li><b>Control del centro:</b> Mantén tu Beyblade cerca del centro para evitar ser expulsado.</li>
+                        <li><b>Contraataque:</b> Aprende a identificar el momento ideal para lanzar con fuerza y sorprender.</li>
+                        <li><b>Personalización:</b> Ajusta piezas y pesos para optimizar el rendimiento según el rival.</li>
+                        <li><b>Lectura del rival:</b> Anticipa los movimientos y adapta tu táctica en tiempo real.</li>
+                    </ol>
+                    <img src="img/Blog/13-180232_5mej_WhatsApp-Image-2025-08-13-at-1.42.26-PM-1200x648.jpeg" alt="Estrategia avanzada" class="img-fluid rounded shadow my-4">
+                </div>
+                <div id="citas">
+                    <h3 class="text-warning mt-4">Citas Destacadas</h3>
+                    <div class="quote">“El verdadero campeón no es el que nunca pierde, sino el que nunca deja de aprender.”</div>
+                    <div class="quote">“Cada batalla es una oportunidad para mejorar tu estrategia.”</div>
+                </div>
+                <div id="conclusion">
+                    <h3 class="text-warning mt-4">Conclusión</h3>
+                    <p>Dominar el BeyStadium es cuestión de práctica, observación y pasión. ¡Pon en marcha estos consejos y conviértete en leyenda!</p>
+                    <div class="alert alert-warning mt-3" style="color:#111 !important;">¿Listo para tu próxima batalla? <a href="torneo-inscripcion.html" class="fw-bold text-danger" style="color:#c31432 !important;">Inscríbete en el próximo torneo</a> o comparte tus propias estrategias en los comentarios.</div>
+                </div>
+                <div class="d-flex align-items-center mt-4">
+                    <span class="like-btn" id="like-btn"><i class="bi bi-heart"></i></span>
+                    <span class="ms-2" id="like-count">0</span> Me gusta
+                </div>
+                <div class="author-box mt-5">
+                    <img src="img/Logo.png" alt="Autor" class="author-img">
+                    <div>
+                        <div class="fw-bold text-warning">Admin</div>
+                        <div class="text-white-50">Campeón nacional y coach de la comunidad BeybladeStore. Apasionado por la estrategia y la enseñanza.</div>
+                    </div>
+                </div>
+                <div class="comment-section mt-5" id="comments">
+                    <h5 class="text-warning mb-3">Comentarios</h5>
+                    <form class="comment-form mb-4" id="comment-form">
+                        <div class="mb-2">
+                            <input type="text" class="form-control" id="comment-name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="mb-2">
+                            <textarea class="form-control" id="comment-text" rows="3" placeholder="Escribe tu comentario..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Comentar</button>
+                        <div class="form-error text-danger mt-2 d-none" id="comment-error">Por favor, completa todos los campos.</div>
+                    </form>
+                    <div id="comment-list"></div>
+                </div>
+                <div class="related-articles mt-5">
+                    <h5 class="text-warning mb-3">Artículos Relacionados</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card p-3 mb-3">
+                                <img src="img/Blog/16dea73c6e8bc4bb2dcaa3618d88b771adf0a620ec153d58fd9c5f54f8367a90.avif" class="card-img-top mb-2" alt="Tutorial Beyblade">
+                                <div class="card-title">Tutorial: Cómo Personalizar tu Beyblade</div>
+                                <a href="detalle-blog-2.html" class="btn btn-outline-warning btn-sm mt-2">Leer más</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card p-3 mb-3">
+                                <img src="img/Blog/Hasbro-sorprende-al-mundo-Beyblade-con-nuevo-auspicio-para-El-coleccionista-Dolapebeyblade-y-Rmbeyblade-de-la-comunidad.jpg" class="card-img-top mb-2" alt="Nuevos Lanzamientos">
+                                <div class="card-title">Nuevos Lanzamientos: Beyblade 2025</div>
+                                <a href="detalle-blog-2.html" class="btn btn-outline-warning btn-sm mt-2">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Anterior</a>
+                    <a href="detalle-blog-2.html" class="btn btn-outline-secondary">Siguiente <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="main-footer text-center py-4 mt-5">
+        <div>BeybladeStore &copy; 2025. Todos los derechos reservados.</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/detalle-articulo.js"></script>
+</body>
+</html>

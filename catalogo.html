@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Beyblades | BaybladeStore</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="fw-bold">BaybladeStore</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="catalogo.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="torneo-inscripcion.html">Combate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                    <a href="carrito.html" class="btn btn-danger ms-3 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary ms-2">
+                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid py-4">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent px-0 mb-4">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Beyblades</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <!-- Sidebar Filtros -->
+            <aside class="col-lg-3 mb-4">
+                <div class="card bg-dark text-white mb-3">
+                    <div class="card-header border-danger border-2 border-bottom bg-dark">
+                        <h5 class="mb-0">Filtros</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="filter-form">
+                            <div class="mb-3">
+                                <label class="form-label">Tipo</label>
+                                <select class="form-select" id="filter-tipo" multiple>
+                                    <option value="Ataque">Ataque</option>
+                                    <option value="Defensa">Defensa</option>
+                                    <option value="Equilibrio">Equilibrio</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Elemento</label>
+                                <select class="form-select" id="filter-elemento" multiple>
+                                    <option value="Fuego">Fuego</option>
+                                    <option value="Agua">Agua</option>
+                                    <option value="Viento">Viento</option>
+                                    <option value="Tierra">Tierra</option>
+                                    <option value="Metal">Metal</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Marca</label>
+                                <select class="form-select" id="filter-marca" multiple>
+                                    <option value="Hasbro">Hasbro</option>
+                                    <option value="Takara Tomy">Takara Tomy</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Precio</label>
+                                <input type="range" class="form-range" min="8000" max="25000" step="1000" id="filter-precio">
+                                <div class="d-flex justify-content-between">
+                                    <span id="precio-min">$8.000</span>
+                                    <span id="precio-max">$25.000</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-warning w-100" id="clear-filters">Limpiar Filtros</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white mb-3">
+                    <div class="card-header border-warning border-2 border-bottom bg-dark">
+                        <h6 class="mb-0">Ordenar por</h6>
+                    </div>
+                    <div class="card-body">
+                        <select class="form-select" id="sort-select">
+                            <option value="novedades">Novedades</option>
+                            <option value="precio-asc">Precio: Menor a mayor</option>
+                            <option value="precio-desc">Precio: Mayor a menor</option>
+                            <option value="popularidad">Popularidad</option>
+                        </select>
+                    </div>
+                </div>
+            </aside>
+            <!-- Grid de Productos -->
+            <section class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="text-white mb-0">Catálogo de Beyblades</h2>
+                    <span class="badge bg-warning text-dark fs-6" id="product-count">0 productos encontrados</span>
+                </div>
+                <div class="row g-4" id="product-grid">
+                    <!-- Cards de productos generadas por JS -->
+                </div>
+                <!-- Paginación -->
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        <!-- Paginación generada por JS -->
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </main>
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <a class="navbar-brand d-flex align-items-center mb-2" href="index.html">
+                        <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                        <span class="fw-bold">BaybladeStore</span>
+                    </a>
+                    <p>¡Tu tienda #1 de Beyblades en Chile!</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Enlaces Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Inicio</a></li>
+                        <li><a href="catalogo.html" class="text-white-50">Productos</a></li>
+                        <li><a href="torneo-inscripcion.html" class="text-white-50">Combate</a></li>
+                        <li><a href="contacto.html" class="text-white-50">Contacto</a></li>
+                        <li><a href="nosotros.html" class="text-white-50">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Contacto</h6>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> contacto@baybladestore.cl</p>
+                    <p class="mb-1"><i class="bi bi-telephone"></i> +56 9 1234 5678</p>
+                    <p><i class="bi bi-geo-alt"></i> Santiago, Chile</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small>&copy; 2025 BaybladeStore. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="js/catalogo.js"></script>
+</body>
+</html>

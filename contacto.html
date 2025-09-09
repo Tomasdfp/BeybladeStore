@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | BaybladeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <style>
+        .form-error { color: #ff4d4f; font-size: 0.95em; }
+        .form-success { color: #28a745; font-size: 1.1em; font-weight: bold; }
+        .map-responsive { overflow:hidden; padding-bottom:56.25%; position:relative; height:0; }
+        .map-responsive iframe { left:0; top:0; height:100%; width:100%; position:absolute; border-radius:1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="fw-bold">BaybladeStore</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="torneo-inscripcion.html">Combate</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                    <a href="carrito.html" class="btn btn-danger ms-3 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary ms-2">
+                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container py-5">
+        <h1 class="text-center text-white fw-bold mb-4">Contáctanos</h1>
+        <div class="row g-4 mb-5">
+            <!-- Formulario de contacto -->
+            <div class="col-md-7">
+                <div class="card bg-dark text-white shadow">
+                    <div class="card-body">
+                        <h4 class="mb-3 text-warning">Envíanos un mensaje</h4>
+                        <form id="contact-form" novalidate>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                                <div class="form-error" id="error-nombre"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="form-error" id="error-email"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label">Asunto</label>
+                                <input type="text" class="form-control" id="asunto" required>
+                                <div class="form-error" id="error-asunto"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                                <div class="form-error" id="error-mensaje"></div>
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Enviar Mensaje</button>
+                            <div class="form-success mt-3 d-none" id="form-success">¡Mensaje enviado con éxito!</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Información de contacto y mapa -->
+            <div class="col-md-5">
+                <div class="card bg-dark text-white mb-4">
+                    <div class="card-body">
+                        <h5 class="text-warning">Información de Contacto</h5>
+                        <p class="mb-1"><i class="bi bi-geo-alt"></i> Av. Beyblade 1234, Santiago, Chile</p>
+                        <p class="mb-1"><i class="bi bi-telephone"></i> +56 9 1234 5678</p>
+                        <p class="mb-1"><i class="bi bi-envelope"></i> contacto@baybladestore.cl</p>
+                        <p class="mb-0"><i class="bi bi-clock"></i> Lunes a Sábado: 10:00 - 19:00</p>
+                    </div>
+                </div>
+                <div class="map-responsive mb-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.857964964232!2d-70.6482696848006!3d-33.4569409807716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a0b1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sSantiago!5e0!3m2!1ses-419!2scl!4v1690000000000!5m2!1ses-419!2scl" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Newsletter -->
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <h5 class="text-warning">Suscríbete al Newsletter</h5>
+                        <form id="newsletter-form" novalidate>
+                            <div class="mb-2">
+                                <input type="email" class="form-control" id="newsletter-email" placeholder="Tu email" required>
+                                <div class="form-error" id="error-newsletter"></div>
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Suscribirse</button>
+                            <div class="form-success mt-2 d-none" id="newsletter-success">¡Suscripción exitosa!</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ -->
+        <section class="mb-5">
+            <h2 class="text-center text-white mb-4">Preguntas Frecuentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            ¿Cuánto demora el despacho?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">El despacho en Santiago es de 24-48 horas hábiles. Regiones: 2-5 días hábiles.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            ¿Puedo retirar en tienda?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Sí, puedes retirar en nuestra sucursal de Santiago presentando tu número de pedido.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            ¿Los productos son originales?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Sí, todos nuestros productos son 100% originales y cuentan con garantía.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <a class="navbar-brand d-flex align-items-center mb-2" href="index.html">
+                        <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                        <span class="fw-bold">BaybladeStore</span>
+                    </a>
+                    <p>¡Tu tienda #1 de Beyblades en Chile!</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Enlaces Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Inicio</a></li>
+                        <li><a href="catalogo.html" class="text-white-50">Productos</a></li>
+                        <li><a href="#combate" class="text-white-50">Combate</a></li>
+                        <li><a href="contacto.html" class="text-white-50">Contacto</a></li>
+                        <li><a href="nosotros.html" class="text-white-50">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Contacto</h6>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> contacto@baybladestore.cl</p>
+                    <p class="mb-1"><i class="bi bi-telephone"></i> +56 9 1234 5678</p>
+                    <p><i class="bi bi-geo-alt"></i> Santiago, Chile</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small>&copy; 2025 BaybladeStore. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="js/contacto.js"></script>
+</body>
+</html>

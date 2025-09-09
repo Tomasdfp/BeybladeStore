@@ -1,0 +1,139 @@
+    <style>
+        body, body * { color: #fff !important; }
+        button, .btn, .btn-primary, .btn-outline-primary, .category-btn {
+            border-radius: 2rem !important;
+            color: #111 !important;
+        }
+    </style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Beyblade | BaybladeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <style>
+        body, body * { color: #fff !important; }
+    </style>
+    <!-- Header igual que index -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="fw-bold">BaybladeStore</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="torneo-inscripcion.html">Combate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    </ul>
+                    <a href="carrito.html" class="btn btn-danger ms-3 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary ms-2">
+                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section igual que index -->
+    <section class="hero d-flex align-items-center justify-content-center text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('img/principal 2.png') center/cover no-repeat; min-height: 350px;">
+        <div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 350px;">
+            <div class="blog-hero-text p-4 mx-auto" style="max-width:600px; background:rgba(255,255,255,0.19); border-radius:1.5rem; box-shadow:0 2px 16px 0 rgba(0,0,0,0.10); margin-top: 0;">
+                <h1 class="fw-bold display-5 mb-2" style="color:#111; text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;">Blog Beyblade</h1>
+                <p class="lead mb-0" style="color:#111; text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;">Noticias, estrategias, lanzamientos y tutoriales del mundo Beyblade. ¡Descubre lo último y mejora tu juego!</p>
+            </div>
+        </div>
+    </section>
+    <main class="container my-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-lg-3 order-lg-2 mb-4">
+                <div class="sidebar mb-4">
+                    <div class="sidebar-title">Artículos populares</div>
+                    <ul class="sidebar-list" id="populares-list">
+                        <!-- JS -->
+                    </ul>
+                </div>
+                <div class="sidebar mb-4">
+                    <div class="sidebar-title">Categorías</div>
+                    <ul class="sidebar-list">
+                        <li><a href="#" class="category-link" data-cat="Estrategias">Estrategias</a></li>
+                        <li><a href="#" class="category-link" data-cat="Torneos">Torneos</a></li>
+                        <li><a href="#" class="category-link" data-cat="Nuevos Productos">Nuevos Productos</a></li>
+                        <li><a href="#" class="category-link" data-cat="Tutoriales">Tutoriales</a></li>
+                        <li><a href="#" class="category-link" data-cat="Noticias">Noticias</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar">
+                    <div class="sidebar-title">Newsletter</div>
+                    <form id="newsletter-form">
+                        <input type="email" class="form-control newsletter-input mb-2" id="newsletter-email" placeholder="Tu email..." required>
+                        <button type="submit" class="btn newsletter-btn w-100">Suscribirse</button>
+                        <div class="form-text text-success d-none" id="newsletter-success">¡Suscripción exitosa!</div>
+                    </form>
+                </div>
+            </aside>
+            <!-- Main -->
+            <section class="col-lg-9 order-lg-1">
+                <!-- Título y subtítulo ahora están en la sección hero -->
+                <div class="mb-3 d-flex flex-wrap align-items-center">
+                    <button class="category-btn active" data-cat="">Todos</button>
+                    <button class="category-btn" data-cat="Estrategias">Estrategias</button>
+                    <button class="category-btn" data-cat="Torneos">Torneos</button>
+                    <button class="category-btn" data-cat="Nuevos Productos">Nuevos Productos</button>
+                    <button class="category-btn" data-cat="Tutoriales">Tutoriales</button>
+                    <button class="category-btn" data-cat="Noticias">Noticias</button>
+                </div>
+                <div class="mb-4 position-relative" style="max-width:400px;">
+                    <span class="search-icon"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control blog-search" id="blog-search" placeholder="Buscar artículos...">
+                </div>
+                <style>
+                    .blog-card-img {
+                        width: 300px !important;
+                        height: 300px !important;
+                        object-fit: cover !important;
+                        border-radius: 1rem;
+                        display: block;
+                        margin: 0 1.5rem 1rem 0 !important;
+                        float: left;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                    }
+                    .blog-card-body:after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+                </style>
+                <div class="blog-grid" id="blog-grid">
+                    <!-- JS: artículos -->
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <button class="btn btn-outline-primary" id="load-more">Cargar más</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="main-footer text-center py-4 mt-5">
+        <div>BeybladeStore &copy; 2025. Todos los derechos reservados.</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

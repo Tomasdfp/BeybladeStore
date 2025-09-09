@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | BaybladeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <style>
+        .timeline {
+            position: relative;
+            margin: 2rem 0 3rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #c31432 0%, #000 100%);
+            transform: translateX(-50%);
+        }
+        .timeline-event {
+            position: relative;
+            width: 50%;
+            padding: 1.5rem 2rem;
+        }
+        .timeline-event.left {
+            left: 0;
+            text-align: right;
+        }
+        .timeline-event.right {
+            left: 50%;
+            text-align: left;
+        }
+        .timeline-event .timeline-dot {
+            position: absolute;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: #c31432;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-event.left .timeline-dot {
+            right: -10px;
+        }
+        .timeline-event.right .timeline-dot {
+            left: -10px;
+        }
+        .stat-card {
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 24px rgba(195,20,50,0.15);
+        }
+        .gallery-img {
+            object-fit: cover;
+            height: 180px;
+            border-radius: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="fw-bold">BaybladeStore</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="torneo-inscripcion.html">Combate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                    <a href="carrito.html" class="btn btn-danger ms-3 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary ms-2">
+                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container py-5">
+        <h1 class="text-center text-white fw-bold mb-4">Sobre BaybladeStore</h1>
+        <!-- Timeline Historia -->
+        <section class="timeline">
+            <div class="timeline-event left">
+                <div class="timeline-dot"></div>
+                <h5 class="text-danger">2018 - Fundación</h5>
+                <p class="text-white-50">BaybladeStore nace de la pasión de dos hermanos fanáticos de Beyblade, con el sueño de crear la tienda más grande y especializada de Chile.</p>
+            </div>
+            <div class="timeline-event right">
+                <div class="timeline-dot"></div>
+                <h5 class="text-danger">2019 - Primer Torneo</h5>
+                <p class="text-white-50">Organizamos nuestro primer torneo nacional, reuniendo a más de 100 entusiastas y familias.</p>
+            </div>
+            <div class="timeline-event left">
+                <div class="timeline-dot"></div>
+                <h5 class="text-danger">2021 - Comunidad Crece</h5>
+                <p class="text-white-50">Superamos los 5.000 clientes y lanzamos la comunidad online de BaybladeStore.</p>
+            </div>
+            <div class="timeline-event right">
+                <div class="timeline-dot"></div>
+                <h5 class="text-danger">2024 - Expansión</h5>
+                <p class="text-white-50">Abrimos nuestra segunda sucursal y organizamos el torneo más grande del país con más de 500 participantes.</p>
+            </div>
+        </section>
+        <!-- Misión, Visión, Valores -->
+        <section class="row text-center mb-5">
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Misión</h5>
+                        <p>Inspirar y unir a la comunidad Beyblade, ofreciendo productos originales, eventos y experiencias inolvidables.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Visión</h5>
+                        <p>Ser la tienda y comunidad Beyblade líder en Latinoamérica, reconocida por su innovación y cercanía.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Valores</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>Pasión</li>
+                            <li>Respeto</li>
+                            <li>Innovación</li>
+                            <li>Comunidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Equipo de trabajo -->
+        <section class="mb-5">
+            <h2 class="text-center text-white mb-4">Nuestro Equipo</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-3">
+                    <div class="card h-100 text-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top mx-auto mt-3 rounded-circle" style="width:110px;height:110px;object-fit:cover;" alt="Fundador">
+                        <div class="card-body">
+                            <h6 class="fw-bold">Tomás Ríos</h6>
+                            <p class="text-muted mb-1">Fundador & CEO</p>
+                            <p class="small">Apasionado por Beyblade desde niño, lidera la visión y los torneos de la tienda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top mx-auto mt-3 rounded-circle" style="width:110px;height:110px;object-fit:cover;" alt="Co-Fundadora">
+                        <div class="card-body">
+                            <h6 class="fw-bold">Camila Ríos</h6>
+                            <p class="text-muted mb-1">Co-Fundadora & Community Manager</p>
+                            <p class="small">Creadora de la comunidad online y organizadora de eventos para todos los fans.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" class="card-img-top mx-auto mt-3 rounded-circle" style="width:110px;height:110px;object-fit:cover;" alt="Logística">
+                        <div class="card-body">
+                            <h6 class="fw-bold">Felipe Soto</h6>
+                            <p class="text-muted mb-1">Logística & Ventas</p>
+                            <p class="small">Responsable de que cada pedido llegue a tiempo y en perfectas condiciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Estadísticas -->
+        <section class="row text-center mb-5">
+            <div class="col-md-3 mb-3">
+                <div class="stat-card p-4">
+                    <h2 class="text-warning mb-0">+8.000</h2>
+                    <div>Clientes Satisfechos</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card p-4">
+                    <h2 class="text-warning mb-0">12</h2>
+                    <div>Torneos Organizados</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card p-4">
+                    <h2 class="text-warning mb-0">2</h2>
+                    <div>Sucursales</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card p-4">
+                    <h2 class="text-warning mb-0">+20</h2>
+                    <div>Eventos Comunitarios</div>
+                </div>
+            </div>
+        </section>
+        <!-- Galería de eventos -->
+        <section class="mb-5">
+            <h2 class="text-center text-white mb-4">Galería de Eventos</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" class="gallery-img w-100 shadow" alt="Evento 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="gallery-img w-100 shadow" alt="Evento 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" class="gallery-img w-100 shadow" alt="Evento 3">
+                </div>
+            </div>
+        </section>
+        <!-- Comunidad Beyblade y CTA -->
+        <section class="text-center py-5">
+            <h2 class="text-white mb-3">¡Únete a la Comunidad Beyblade!</h2>
+            <p class="text-white-50 mb-4">Participa en torneos, comparte tus logros y haz nuevos amigos. Síguenos en redes sociales y sé parte de la familia BaybladeStore.</p>
+            <a href="contacto.html" class="btn btn-warning btn-lg fw-bold shadow">Unirme a la Comunidad</a>
+        </section>
+    </main>
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <a class="navbar-brand d-flex align-items-center mb-2" href="index.html">
+                        <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                        <span class="fw-bold">BaybladeStore</span>
+                    </a>
+                    <p>¡Tu tienda #1 de Beyblades en Chile!</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Enlaces Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Inicio</a></li>
+                        <li><a href="catalogo.html" class="text-white-50">Productos</a></li>
+                        <li><a href="#combate" class="text-white-50">Combate</a></li>
+                        <li><a href="#contacto" class="text-white-50">Contacto</a></li>
+                        <li><a href="#" class="text-white-50">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Contacto</h6>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> contacto@baybladestore.cl</p>
+                    <p class="mb-1"><i class="bi bi-telephone"></i> +56 9 1234 5678</p>
+                    <p><i class="bi bi-geo-alt"></i> Santiago, Chile</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small>&copy; 2025 BaybladeStore. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>

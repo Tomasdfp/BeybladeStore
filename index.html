@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaybladeStore | Inicio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="fw-bold">BaybladeStore</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="torneo-inscripcion.html">Combate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                    <a href="carrito.html" class="btn btn-danger ms-3 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary ms-2">
+                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero d-flex align-items-center justify-content-center text-center text-white">
+            <div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 350px;">
+                <div class="hero-text p-4 mx-auto" style="max-width:600px; background:rgba(255,255,255,0.19); border-radius:1.5rem; box-shadow:0 2px 16px 0 rgba(0,0,0,0.10);">
+                    <h1 class="display-3 fw-bold mb-3" style="color:#fff; text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;">¡Desata la Batalla con los Mejores Beyblades!</h1>
+                    <p class="lead mb-4" style="color:#fff; text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;">Encuentra los lanzadores, arenas y Beyblades más potentes en BaybladeStore</p>
+                    <a href="catalogo.html" class="btn btn-warning btn-lg fw-bold shadow">Ver Productos</a>
+                </div>
+            </div>
+        </section>
+        <style>
+            .hero {
+                background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('img/principal 2.png') center/cover no-repeat !important;
+                min-height: 350px;
+            }
+        </style>
+        </section>
+        <!-- Carrusel Beyblades Destacados -->
+        <section class="container py-5" id="beyblades">
+            <h2 class="text-center mb-4 text-white">Beyblades Destacados</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/0019516626537.webp" class="card-img-top" alt="Valtryek V2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Valtryek V2</h5>
+                            <p class="card-text">$12.990</p>
+                            <button class="btn btn-danger add-to-cart">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/10421001608_GRIS_5.jpg" class="card-img-top" alt="Spryzen S2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Spryzen S2</h5>
+                            <p class="card-text">$13.990</p>
+                            <button class="btn btn-danger add-to-cart">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/3e58b5f1-fao_144631501_1.jpg" class="card-img-top" alt="Roktavor R2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Roktavor R2</h5>
+                            <p class="card-text">$11.990</p>
+                            <button class="btn btn-danger add-to-cart">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/81CFov0S0ZL._AC_UF894_1000_QL80_grande.webp" class="card-img-top" alt="Luinor L2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luinor L2</h5>
+                            <p class="card-text">$14.990</p>
+                            <button class="btn btn-danger add-to-cart">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Últimos Lanzamientos -->
+        <section class="container py-5" id="productos">
+            <h2 class="text-center mb-4 text-white">Últimos Lanzamientos</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/81V1UP7Cp1L.jpg" class="card-img-top" alt="Genesis Valtryek V3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Genesis Valtryek V3</h5>
+                            <p class="card-text">$15.990</p>
+                            <button class="btn btn-warning add-to-cart">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/beyblade-x-lanzador-premium-con-peonza-0-20250329060652.jpg" class="card-img-top" alt="Satomb S3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Satomb S3</h5>
+                            <p class="card-text">$16.990</p>
+                            <button class="btn btn-warning add-to-cart">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/f38c373a-dbe0-4218-acb9-e97c2f29c433__15523.1731275026_2048x.webp" class="card-img-top" alt="Fafnir F3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fafnir F3</h5>
+                            <p class="card-text">$17.990</p>
+                            <button class="btn btn-warning add-to-cart">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Torneos Próximos -->
+        <section class="container py-5" id="combate">
+            <h2 class="text-center mb-4 text-white">Torneos Próximos</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white h-100 border-warning">
+                        <div class="card-body">
+                            <h5 class="card-title">Torneo Nacional Beyblade 2025</h5>
+                            <p class="card-text">Fecha: 20 de Octubre, 2025<br>Lugar: Arena Santiago<br>Premios para los 3 primeros lugares. ¡Inscríbete ya!</p>
+                            <a href="torneo-inscripcion.html" class="btn btn-warning">Inscribirse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white h-100 border-danger">
+                        <div class="card-body">
+                            <h5 class="card-title">Desafío Beyblade Kids</h5>
+                            <p class="card-text">Fecha: 5 de Noviembre, 2025<br>Lugar: Mall Plaza Vespucio<br>Competencia para niños y niñas hasta 12 años.</p>
+                            <a href="#" class="btn btn-danger">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contacto (ancla) -->
+    <!-- Contacto (ancla) eliminado -->
+    </main>
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <a class="navbar-brand d-flex align-items-center mb-2" href="#">
+                        <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                        <span class="fw-bold">BaybladeStore</span>
+                    </a>
+                    <p>¡Tu tienda #1 de Beyblades en Chile!</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Enlaces Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Inicio</a></li>
+                        <li><a href="catalogo.html" class="text-white-50">Productos</a></li>
+                        <li><a href="torneo-inscripcion.html" class="text-white-50">Combate</a></li>
+                        <li><a href="contacto.html" class="text-white-50">Contacto</a></li>
+                        <li><a href="nosotros.html" class="text-white-50">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Contacto</h6>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> contacto@baybladestore.cl</p>
+                    <p class="mb-1"><i class="bi bi-telephone"></i> +56 9 1234 5678</p>
+                    <p><i class="bi bi-geo-alt"></i> Santiago, Chile</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small>&copy; 2025 BaybladeStore. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="js/main.js"></script>
+</body>
+</html>

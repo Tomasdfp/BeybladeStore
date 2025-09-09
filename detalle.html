@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto | BaybladeStore</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <style>
+        .zoom-img {
+            transition: transform 0.2s;
+            cursor: zoom-in;
+        }
+        .zoom-img:hover {
+            transform: scale(1.15);
+            z-index: 2;
+        }
+        .thumb-img {
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: border 0.2s;
+        }
+        .thumb-img.active, .thumb-img:hover {
+            border: 2px solid #c31432;
+        }
+        .stock-indicator {
+            font-weight: bold;
+        }
+        .review-star {
+            cursor: pointer;
+            font-size: 1.3rem;
+        }
+        .review-star.selected {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="fw-bold">BaybladeStore</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="torneo-inscripcion.html">Combate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                    <a href="carrito.html" class="btn btn-danger ms-3 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary ms-2">
+                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container py-5">
+        <div class="row g-4">
+            <!-- Galería de imágenes -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <img id="main-img" src="img/Productos/0019516626537.webp" class="img-fluid rounded zoom-img shadow" alt="Valtryek V2">
+                </div>
+                <div class="d-flex gap-2">
+                    <img src="img/Productos/0019516626537.webp" class="thumb-img rounded active" width="70" alt="Vista 1">
+                    <img src="img/Productos/10421001608_GRIS_5.jpg" class="thumb-img rounded" width="70" alt="Vista 2">
+                    <img src="img/Productos/3e58b5f1-fao_144631501_1.jpg" class="thumb-img rounded" width="70" alt="Vista 3">
+                </div>
+            </div>
+            <!-- Información principal -->
+            <div class="col-md-6">
+                <h1 class="fw-bold mb-2">Valtryek V2</h1>
+                <div class="mb-2">
+                    <span class="badge bg-danger">Ataque</span>
+                    <span class="badge bg-primary">Viento</span>
+                </div>
+                <h3 class="text-warning mb-3">$12.990</h3>
+                <div class="mb-2">
+                    <span class="stock-indicator text-success"><i class="bi bi-check-circle"></i> En stock (12 disponibles)</span>
+                </div>
+                <p class="text-white">Beyblade de ataque con gran velocidad y potencia. Incluye lanzador y manual de instrucciones. Ideal para batallas competitivas.</p>
+                <ul class="text-white">
+                    <li>Marca: Hasbro</li>
+                    <li>Peso: 45g</li>
+                    <li>Rendimiento: Alto</li>
+                </ul>
+                <div class="d-flex align-items-center mb-3">
+                    <label for="cantidad" class="me-2 text-white">Cantidad:</label>
+                    <input type="number" id="cantidad" class="form-control w-auto" value="1" min="1" max="12" style="width:80px;">
+                </div>
+                <button class="btn btn-danger btn-lg fw-bold w-100 mb-2" id="add-to-cart">Añadir al carrito</button>
+                <div id="cantidad-error" class="text-danger small d-none">Cantidad no válida.</div>
+            </div>
+        </div>
+        <!-- Especificaciones técnicas -->
+        <section class="mt-5">
+            <h4 class="mb-3 text-white">Especificaciones Técnicas</h4>
+            <table class="table table-dark table-striped rounded">
+                <tbody>
+                    <tr><th>Tipo</th><td>Ataque</td></tr>
+                    <tr><th>Elemento</th><td>Viento</td></tr>
+                    <tr><th>Peso</th><td>45g</td></tr>
+                    <tr><th>Rendimiento</th><td>Alto</td></tr>
+                    <tr><th>Marca</th><td>Hasbro</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Productos relacionados -->
+        <section class="mt-5">
+            <h4 class="mb-3 text-white">Productos Relacionados</h4>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/10421001608_GRIS_5.jpg" class="card-img-top" alt="Spryzen S2">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Spryzen S2</h6>
+                            <p class="card-text">$13.990</p>
+                            <a href="detalle.html" class="btn btn-outline-danger btn-sm">Ver detalle</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/3e58b5f1-fao_144631501_1.jpg" class="card-img-top" alt="Roktavor R2">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Roktavor R2</h6>
+                            <p class="card-text">$11.990</p>
+                            <a href="detalle.html" class="btn btn-outline-danger btn-sm">Ver detalle</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/81CFov0S0ZL._AC_UF894_1000_QL80_grande.webp" class="card-img-top" alt="Luinor L2">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Luinor L2</h6>
+                            <p class="card-text">$14.990</p>
+                            <a href="detalle.html" class="btn btn-outline-danger btn-sm">Ver detalle</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card h-100">
+                        <img src="img/Productos/81V1UP7Cp1L.jpg" class="card-img-top" alt="Genesis Valtryek V3">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Genesis Valtryek V3</h6>
+                            <p class="card-text">$15.990</p>
+                            <a href="detalle.html" class="btn btn-outline-danger btn-sm">Ver detalle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Preguntas frecuentes -->
+        <section class="mt-5">
+            <h4 class="mb-3 text-white">Preguntas Frecuentes</h4>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            ¿Incluye lanzador?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Sí, este modelo incluye lanzador y manual.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            ¿Es compatible con otras arenas?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Sí, es compatible con la mayoría de arenas estándar Beyblade.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            ¿Cuál es el material principal?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Plástico reforzado y metal para máxima durabilidad.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reseñas de usuarios -->
+        <section class="mt-5">
+            <h4 class="mb-3 text-white">Reseñas de Usuarios</h4>
+            <div class="mb-3">
+                <span id="avg-rating" class="me-2"></span>
+                <span id="review-count" class="text-white-50"></span>
+            </div>
+            <form id="review-form" class="mb-4">
+                <div class="mb-2">
+                    <span class="review-star" data-value="1">★</span>
+                    <span class="review-star" data-value="2">★</span>
+                    <span class="review-star" data-value="3">★</span>
+                    <span class="review-star" data-value="4">★</span>
+                    <span class="review-star" data-value="5">★</span>
+                </div>
+                <textarea class="form-control mb-2" id="review-text" rows="2" placeholder="Escribe tu reseña..." required></textarea>
+                <button type="submit" class="btn btn-warning">Enviar Reseña</button>
+            </form>
+            <div id="reviews-list">
+                <!-- Reseñas generadas por JS -->
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+                <p><i class="bi bi-geo-alt"></i> Santiago, Chile</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small>&copy; 2025 BaybladeStore. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="js/detalle.js"></script>
+</body>
+</html>
