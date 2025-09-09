@@ -1,8 +1,19 @@
     <style>
         body, body * { color: #fff !important; }
-        button, .btn, .btn-primary, .btn-outline-primary, .category-btn {
-            border-radius: 2rem !important;
-            color: #111 !important;
+        /* Corrige el color del texto del botón de inicio de sesión para que sea rojo como en index.html */
+        .btn-outline-danger {
+            color: #dc3545 !important;
+            font-weight: 400 !important;
+        }
+        .btn-outline-danger .bi-person-circle {
+            color: #dc3545 !important;
+        }
+        .btn-outline-danger:hover, .btn-outline-danger:focus {
+            color: #fff !important;
+        }
+        .btn-outline-danger:hover .bi-person-circle,
+        .btn-outline-danger:focus .bi-person-circle {
+            color: #fff !important;
         }
     </style>
 <!DOCTYPE html>
@@ -44,8 +55,8 @@
                         <i class="bi bi-cart3"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
                     </a>
-                    <a href="login.html" class="btn btn-outline-primary ms-2">
-                        <i class="bi bi-person-circle"></i> Iniciar Sesión
+                    <a href="login.html" class="btn btn-outline-danger ms-2 d-flex align-items-center">
+                        <i class="bi bi-person-circle me-1"></i> Iniciar Sesión
                     </a>
                 </div>
             </div>
@@ -119,6 +130,22 @@
                         content: "";
                         display: table;
                         clear: both;
+                    }
+                    /* Botones de categoría más redondeados y texto negro */
+                    .category-btn {
+                        border-radius: 2rem !important;
+                        color: #111 !important;
+                        font-weight: 400 !important;
+                        background: #fff;
+                        border: 1px solid #ddd;
+                        margin-right: 0.5rem;
+                        margin-bottom: 0.5rem;
+                        transition: background 0.2s, color 0.2s;
+                    }
+                    .category-btn.active, .category-btn:focus, .category-btn:hover {
+                        background: #f8d7da !important;
+                        color: #111 !important;
+                        border-color: #dc3545 !important;
                     }
                 </style>
                 <div class="blog-grid" id="blog-grid">
