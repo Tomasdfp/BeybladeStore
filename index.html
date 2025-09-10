@@ -52,8 +52,8 @@
             </div>
         </section>
     <style>
-            /* Mantener el mismo tamaño de tarjetas e imágenes en Beyblades Destacados para <=1387px */
-            @media (max-width: 1387px) {
+            /* Mantener el mismo tamaño de tarjetas e imágenes en Beyblades Destacados para <=1400px */
+            @media (max-width: 1400px) {
                 #beyblades .product-card {
                     min-height: 430px;
                     display: flex;
@@ -72,6 +72,14 @@
                     flex-direction: column;
                     justify-content: flex-end;
                 }
+            }
+            /* Forzar el tamaño de la imagen de Luinor L2 para que no se deforme en ningún tamaño */
+            #beyblades img[alt="Luinor L2"] {
+                height: 300px !important;
+                width: 100% !important;
+                object-fit: cover !important;
+                max-width: 100%;
+                display: block;
             }
             /* Más separación entre tarjetas de productos en pantallas pequeñas */
             @media (max-width: 767.98px) {
