@@ -72,10 +72,12 @@ document.getElementById('formProducto').onsubmit = function(e) {
     imagenes: document.getElementById('imagenes').value,
     especificaciones: document.getElementById('especificaciones').value
   };
+  let exito = false;
   if (editId) {
     productos = productos.map(p => p.id === editId ? prod : p);
   } else {
     productos.push(prod);
+    exito = true;
   }
   guardarProductos();
   renderTabla();
@@ -84,6 +86,18 @@ document.getElementById('formProducto').onsubmit = function(e) {
   document.getElementById('modalProductoLabel').textContent = 'Nuevo Producto';
   var modal = bootstrap.Modal.getInstance(document.getElementById('modalProducto'));
   modal.hide();
+  if (exito) {
+    mostrarMensajeExito('¡Producto creado con éxito!');
+  }
+
+  function mostrarMensajeExito(msg) {
+    let alerta = document.createElement('div');
+    alerta.className = 'alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3 shadow';
+    alerta.style.zIndex = 2000;
+    alerta.textContent = msg;
+    document.body.appendChild(alerta);
+    setTimeout(()=>{ alerta.remove(); }, 2200);
+  }
 };
 
 window.editarProducto = function(id) {

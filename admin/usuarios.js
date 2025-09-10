@@ -68,18 +68,45 @@ document.getElementById('formUsuario').onsubmit = function(e) {
   if (!rol.value) { rol.classList.add('is-invalid'); valido = false; }
   if (!estado.value) { estado.classList.add('is-invalid'); valido = false; }
   if (!valido) return;
-  // Editar
-  usuarios = usuarios.map(u => u.id === editId ? {
-    ...u,
-    nombre: nombre.value,
-    email: email.value,
-    rol: rol.value,
-    estado: estado.value
-  } : u);
+  let exito = false;
+  if (editId) {
+    // Editar
+    usuarios = usuarios.map(u => u.id === editId ? {
+      ...u,
+      nombre: nombre.value,
+      email: email.value,
+      rol: rol.value,
+      estado: estado.value
+    } : u);
+  } else {
+    // Nuevo usuario
+    const nuevo = {
+      id: usuarios.length ? Math.max(...usuarios.map(u=>u.id))+1 : 1,
+      nombre: nombre.value,
+      email: email.value,
+      rol: rol.value,
+      estado: estado.value,
+      fecha: new Date().toISOString().slice(0,10)
+    };
+    usuarios.push(nuevo);
+    exito = true;
+  }
   guardarUsuarios();
   renderTabla();
   var modal = bootstrap.Modal.getInstance(document.getElementById('modalUsuario'));
   modal.hide();
+  if (exito) {
+    mostrarMensajeExito('¡Usuario creado con éxito!');
+  }
+
+  function mostrarMensajeExito(msg) {
+    let alerta = document.createElement('div');
+    alerta.className = 'alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3 shadow';
+    alerta.style.zIndex = 2000;
+    alerta.textContent = msg;
+    document.body.appendChild(alerta);
+    setTimeout(()=>{ alerta.remove(); }, 2200);
+  }
 };
 
 window.editarUsuario = function(id) {
