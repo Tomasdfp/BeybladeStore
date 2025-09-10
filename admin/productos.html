@@ -58,20 +58,42 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <!-- Sidebar -->
-        <nav class="col-md-2 d-none d-md-block sidebar">
-            <div class="text-center mb-4">
-                <img src="../img/logo.png" class="logo" alt="Logo">
-                <h5 class="fw-bold">Admin</h5>
-            </div>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link active" href="productos.html"><i class="bi bi-box-seam me-2"></i>Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a></li>
-                <li class="nav-item mt-4"><a class="nav-link text-warning fw-bold" href="../index.html"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a></li>
-            </ul>
-        </nav>
+  <div class="row">
+    <!-- Botón menú móvil -->
+    <button class="btn btn-primary d-md-none my-2 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
+      <i class="bi bi-list"></i> Menú
+    </button>
+    <!-- Sidebar Desktop -->
+    <nav class="col-md-2 d-none d-md-block sidebar">
+      <div class="text-center mb-4">
+        <img src="../img/logo.png" class="logo" alt="Logo">
+        <h5 class="fw-bold">Admin</h5>
+      </div>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link active" href="productos.html"><i class="bi bi-box-seam me-2"></i>Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a></li>
+        <li class="nav-item mt-4"><a class="nav-link text-warning fw-bold" href="../index.html"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a></li>
+      </ul>
+    </nav>
+    <!-- Sidebar Offcanvas para móvil -->
+    <div class="offcanvas offcanvas-start d-md-none sidebar" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Admin</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <div class="text-center mb-4 mt-3">
+          <img src="../img/logo.png" class="logo" alt="Logo">
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="productos.html"><i class="bi bi-box-seam me-2"></i>Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a></li>
+          <li class="nav-item mt-4"><a class="nav-link text-warning fw-bold" href="../index.html"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
         <!-- Main content -->
         <main class="col-md-10 ms-sm-auto main-content">
             <div class="d-flex justify-content-between align-items-center mb-4">
