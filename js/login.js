@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form.querySelector('button[type="submit"]').disabled = false;
             // Redirección según tipo de usuario
             if (type.value === 'admin') {
-                window.location.href = 'file:///C:/Users/tomas/Desktop/BayStore/admin/index.html';
+                window.location.href = 'admin/index.html';
             } else {
                 window.location.href = 'carrito.html';
             }
